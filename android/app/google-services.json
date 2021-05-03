@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "841597732619",
+    "project_id": "posologuia",
+    "storage_bucket": "posologuia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841597732619:android:a7dc9e0a52be73a18d040e",
+        "android_client_info": {
+          "package_name": "com.unisep.posologuia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841597732619-9dvfcouri7m0d2d7gppjkv782k57di9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQCFHCqxUOZby2NW7rJXC-M5chI0zHnls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841597732619-9dvfcouri7m0d2d7gppjkv782k57di9g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "841597732619-vppkpa47hlms7kp3rf2b29q5vk0evs1e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unisep.posologuia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
