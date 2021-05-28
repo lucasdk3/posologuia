@@ -121,7 +121,6 @@ abstract class _HomeControllerBase with Store {
 
   @action
   Future<dynamic> getNomes(int classeId) async {
-
     listNomes.clear();
     listNomesId.clear();
 
@@ -225,7 +224,7 @@ abstract class _HomeControllerBase with Store {
       for (var document in doc["data"]["medicamentos"]) {
         doseApresentacao = document["dose_apresentacao"];
         dosemg = document["dose_mg"];
-        doseml = document["dose_ml"] / 1 ;
+        doseml = document["dose_ml"] != null ? document["dose_ml"] / 1 : 1;
         fonteMed = document["fonte"];
         nomeSelecionado = document["nome"];
         nomeReferencia = document["nome_referencia"];
@@ -234,7 +233,8 @@ abstract class _HomeControllerBase with Store {
         doseMax = document["dose_max"];
         idadeString = document["idade"];
         tempo = document["dose_tempo"];
-        doseReferencia = document["dose_refe"] / 1;
+        doseReferencia =
+            document["dose_refe"] != null ? document["dose_refe"] / 1 : 1;
         nomeId = document["nome_id"];
         id = document['id'];
 
@@ -308,7 +308,7 @@ abstract class _HomeControllerBase with Store {
           : dose = (doseReferencia * peso);
       dosagem = dose / (doseApresentacao * 1.8);
       return resultado =
-          'Para esse paciente é indicado $dosagem tubetes. Fonte: $fonteMed';
+          'Para esse paciente é indicado $dosagem tubetes de $tempo em $tempo horas. Fonte: $fonteMed';
     } else if (tipoApresentacao == 'comprimido_m' ||
         tipoApresentacao == 'capsula_m' ||
         tipoApresentacao == 'dragea') {
@@ -316,10 +316,10 @@ abstract class _HomeControllerBase with Store {
       if (dosagem > 1) {
         if (tipoApresentacao == 'comprimido_m') {
           return resultado =
-              'Para esse paciente é indicado $dosagem comprimidos, $observacao. Fonte: $fonteMed';
+              'Para esse paciente é indicado $dosagem comprimidos de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
         } else if (tipoApresentacao == 'capsula_m') {
           return resultado =
-              'Para esse paciente é indicado $dosagem capsulas, $observacao. Fonte: $fonteMed';
+              'Para esse paciente é indicado $dosagem capsulas de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
         } else {
           return resultado =
               'Para esse paciente é indicado $dosagem drageas, de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
@@ -327,10 +327,10 @@ abstract class _HomeControllerBase with Store {
       } else {
         if (tipoApresentacao == 'comprimido_m') {
           return resultado =
-              'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} comprimido, $observacao. Fonte: $fonteMed';
+              'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} comprimido de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
         } else if (tipoApresentacao == 'capsula_m') {
           return resultado =
-              'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} capsula, $observacao. Fonte: $fonteMed';
+              'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} capsula de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
         } else {
           return resultado =
               'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} dragea, de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
@@ -340,7 +340,7 @@ abstract class _HomeControllerBase with Store {
       if (nomeSelecionado == 'Midazolam') {
         dosagem = doseApresentacao * peso;
         return resultado =
-            'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} ml, $observacao. Fonte: $fonteMed';
+            'Para esse paciente é indicado ${dosagem.toStringAsFixed(2)} ml de $tempo em $tempo horas, $observacao. Fonte: $fonteMed';
       } else {
         var dose2;
         dose2 = doseReferencia * peso;
