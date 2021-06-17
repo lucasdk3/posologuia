@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 import 'package:posologuia/app/modules/mais/mais_model.dart';
-import 'package:posologuia/app/utils/user_controller.dart';
 import 'package:mobx/mobx.dart';
 
 part 'mais_controller.g.dart';
@@ -19,8 +18,6 @@ abstract class _MaisControllerBase with Store {
 
   @observable
   List<MaisModel> listItens = [];
-
-  UserController _userController = UserController();
 
   @action
   Future<dynamic> getRanking() async {

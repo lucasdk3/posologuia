@@ -42,12 +42,11 @@ class _BasePageState extends State<BasePage> {
           selectedItemColor: primary,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(LineAwesomeIcons.paste), title: Text('Sobre')),
+                icon: Icon(LineAwesomeIcons.paste), label: 'Sobre'),
             BottomNavigationBarItem(
-                icon: Icon(LineAwesomeIcons.home), title: Text('Prescrição')),
+                icon: Icon(LineAwesomeIcons.home), label: 'Prescrição'),
             BottomNavigationBarItem(
-                icon: Icon(LineAwesomeIcons.trophy),
-                title: Text('Mais pesquisados')),
+                icon: Icon(LineAwesomeIcons.trophy), label: 'Mais pesquisados'),
           ]);
     });
   }

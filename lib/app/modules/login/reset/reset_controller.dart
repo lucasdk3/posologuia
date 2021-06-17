@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mobx/mobx.dart';
@@ -29,6 +28,8 @@ abstract class _ResetControllerBase with Store {
   String validate() {
     if (email == null || !email.contains('@')) {
       return 'Email inválido';
+    } else {
+      return null;
     }
   }
 

@@ -50,6 +50,8 @@ abstract class _LoginControllerBase with Store {
       return 'Email e senha inválidos';
     } else if (senha.length < 6) {
       return 'A senha deve conter mais que 6 digitos';
+    } else {
+      return null;
     }
   }
 

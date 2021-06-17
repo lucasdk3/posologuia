@@ -115,7 +115,7 @@ class _SobrePageState extends ModularState<SobrePage, SobreController> {
   }
 
   showAlertDialog1(BuildContext context) {
-    Widget okButton = FlatButton(
+    Widget okButton = TextButton(
       child: Text("OK"),
       onPressed: () {
         Modular.to.pop();

@@ -1,4 +1,3 @@
-import 'package:combos/combos.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -73,11 +72,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return TextFormField(
       controller: controller,
       onChanged: onChanged,
-      validator: (input) {
-        if (input.isEmpty) {
-          return validator;
-        }
-      },
+      validator: (input) => input.isEmpty ? validator : null,
       style: letraPreta,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
@@ -275,7 +270,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   showAlertDialog1(BuildContext context, String resultado) {
     BaseController baseController =
         Provider.of<BaseController>(context, listen: false);
-    Widget okButton = FlatButton(
+    Widget okButton = TextButton(
       child: Text("OK"),
       onPressed: () {
         baseController.apresentacao = null;

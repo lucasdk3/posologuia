@@ -1,6 +1,5 @@
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:posologuia/app/modules/mais/mais_page.dart';
-import 'mais_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class MaisModule extends WidgetModule {

@@ -65,6 +65,8 @@ abstract class _RegisterControllerBase with Store {
       return 'A senha deve conter mais que 6 digitos';
     } else if (nome == null) {
       return 'Nome inválido';
+    } else {
+      return null;
     }
   }
 
